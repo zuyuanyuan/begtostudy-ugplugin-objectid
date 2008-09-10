@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SetId", "SetId\SetId.vcproj", "{AB395B17-9036-4D52-9B2D-2CD406435C53}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GetId", "GetId\GetId.vcproj", "{6CA2630D-C53A-40AA-A466-9BF067B7EFAC}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AB395B17-9036-4D52-9B2D-2CD406435C53}.Debug|Win32.ActiveCfg = Debug|Win32
+		{AB395B17-9036-4D52-9B2D-2CD406435C53}.Debug|Win32.Build.0 = Debug|Win32
+		{AB395B17-9036-4D52-9B2D-2CD406435C53}.Release|Win32.ActiveCfg = Release|Win32
+		{AB395B17-9036-4D52-9B2D-2CD406435C53}.Release|Win32.Build.0 = Release|Win32
+		{6CA2630D-C53A-40AA-A466-9BF067B7EFAC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6CA2630D-C53A-40AA-A466-9BF067B7EFAC}.Debug|Win32.Build.0 = Debug|Win32
+		{6CA2630D-C53A-40AA-A466-9BF067B7EFAC}.Release|Win32.ActiveCfg = Release|Win32
+		{6CA2630D-C53A-40AA-A466-9BF067B7EFAC}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
