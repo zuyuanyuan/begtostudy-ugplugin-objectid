@@ -84,21 +84,6 @@ extern DllExport void ufusr( char *parm, int *returnCode, int rlen )
     
 	try
 	{
-		if (UI::GetUI()->SelectionManager()->GetNumSelectedObjects() == 1)
-		{
-			NXObject* obj = UI::GetUI()->SelectionManager()->GetSelectedObject(0);
-
-			char* handle = UF_TAG_ask_handle_of_tag(obj->Tag());
-			char* null_string1;
-			unsigned int null_string2,id;
-			UF_TAG_decompose_handle(handle,&null_string1,&id, &null_string2);
-
-			
-			char str[133];
-			sprintf(str,"HANDLE R-%d",id);
-			uc1601(str,1);
-		}
-		else if(UI::GetUI()->SelectionManager()->GetNumSelectedObjects()>1)
 			for (int i = 0; i < UI::GetUI()->SelectionManager()->GetNumSelectedObjects(); i++)
 			{
 				NXObject* obj = UI::GetUI()->SelectionManager()->GetSelectedObject(i);
@@ -109,11 +94,11 @@ extern DllExport void ufusr( char *parm, int *returnCode, int rlen )
 				UF_TAG_decompose_handle(handle,&null_string1,&id, &null_string2);
 
 				char str[133];
-				sprintf(str,"HANDLE R-%d",id);
-				uc1601(str,1);
+				sprintf(str,"%d",id);
 
 				if (!Session::GetSession()->ListingWindow()->IsOpen())
 					Session::GetSession()->ListingWindow()->Open();
+
 				Session::GetSession()->ListingWindow()->WriteLine(str);
 			}
 	}
