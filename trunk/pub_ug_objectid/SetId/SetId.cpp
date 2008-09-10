@@ -37,7 +37,8 @@ using namespace NXOpen;
 NXObject* GetObjectFormid(int id)
 {
 	char str[133];
-	sprintf(str,"HANDLE R-%s",id);
+	sprintf(str,"HANDLE R-%d",id);
+//	uc1601(str,1);
 	NXObject* obj = dynamic_cast<NXObject*>(Session::GetSession()->Parts()->Work()->FindObject(str));
 
 	return obj;
@@ -94,11 +95,12 @@ extern DllExport void ufusr( char *parm, int *returnCode, int rlen )
 	try
 	{
 		char input[133];
+		memset(input,0,133*sizeof(char));
 		int length;
 		uc1600("Input id",input,&length);
 
-		int id;
-		sscanf(input,"%d",id);
+		int id=0;
+		sscanf(input,"%d",&id);
 
 		NXObject* obj = GetObjectFormid(id);
 
