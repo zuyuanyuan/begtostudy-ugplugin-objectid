@@ -146,7 +146,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="libufun.lib libnxopencpp.lib libugopenint.lib libnxopenuicpp.lib"
-				OutputFile="$(OutDir)/GetId.dll"
+				OutputFile="../objectid/application/GetId.dll"
 				LinkIncremental="1"
 				AdditionalLibraryDirectories=";$(UGII_BASE_DIR)\ugopen"
 				GenerateDebugInformation="true"

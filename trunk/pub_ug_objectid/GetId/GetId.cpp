@@ -84,23 +84,26 @@ extern DllExport void ufusr( char *parm, int *returnCode, int rlen )
     
 	try
 	{
-			for (int i = 0; i < UI::GetUI()->SelectionManager()->GetNumSelectedObjects(); i++)
-			{
-				NXObject* obj = UI::GetUI()->SelectionManager()->GetSelectedObject(i);
+		if(UI::GetUI()->SelectionManager()->GetNumSelectedObjects()<1)
+			uc1601("No Selected object!",0);
 
-				char* handle = UF_TAG_ask_handle_of_tag(obj->Tag());
-				char* null_string1;
-				unsigned int null_string2,id;
-				UF_TAG_decompose_handle(handle,&null_string1,&id, &null_string2);
+		for (int i = 0; i < UI::GetUI()->SelectionManager()->GetNumSelectedObjects(); i++)
+		{
+			NXObject* obj = UI::GetUI()->SelectionManager()->GetSelectedObject(i);
 
-				char str[133];
-				sprintf(str,"%d",id);
+			char* handle = UF_TAG_ask_handle_of_tag(obj->Tag());
+			char* null_string1;
+			unsigned int null_string2,id;
+			UF_TAG_decompose_handle(handle,&null_string1,&id, &null_string2);
 
-				if (!Session::GetSession()->ListingWindow()->IsOpen())
-					Session::GetSession()->ListingWindow()->Open();
+			char str[133];
+			sprintf(str,"%d",id);
 
-				Session::GetSession()->ListingWindow()->WriteLine(str);
-			}
+			if (!Session::GetSession()->ListingWindow()->IsOpen())
+				Session::GetSession()->ListingWindow()->Open();
+
+			Session::GetSession()->ListingWindow()->WriteLine(str);
+		}
 	}
 	catch(NXException* ex)
 	{
