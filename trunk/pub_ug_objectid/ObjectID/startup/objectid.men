@@ -20,6 +20,6 @@ SEPARATOR
 
 BUTTON 	ABOUT
 LABEL About
-ACTIONS notepad readme.txt
+ACTIONS "notepad %UGII_USER_DIR%/startup/readme.txt"
 
 END_OF_MENU
