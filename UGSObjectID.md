@@ -1,0 +1,3 @@
+In UGS,Object is desgned by a unsignd int number - tag. But tag would be changed after next open,we usually ues id - an unsignd int number got from handle - the only expression to delegate the object.
+
+Useing the plugin ,you can show the id of selected objects and highlight the object with given number.
